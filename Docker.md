@@ -1,14 +1,15 @@
 # How to use Docker with simple Node.js project
 1. Use PowerShell. VSCode terminal is OK  
 2. All words in capital are to be changed with your ones
-3. I will use 8000 port, you can use your one
-4. Read <code><a href="https://docs.docker.com/get-started/overview/">Docker Overview</a></code> for full and the most correct experience
-5. The author is not responsible for errors. Read the real documentation!
+3. I will use 8000 port, you can use your one 
+4. The author is not responsible for errors
+5. Read <code><a href="https://docs.docker.com/get-started/overview/">Docker Overview</a></code> for full and the most correct experience!
 
 ## Prepare your simple project 
 FOLDER_NAME/  
-- ./package.json    
-- ./server.js  
+- package.json    
+- server.js 
+- ... 
 
 ## Build an image
 - Make Dokerfile file in FOLDER_NAME with:
