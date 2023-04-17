@@ -52,7 +52,7 @@ EXPOSE 8000
 ## Work with Bind mounts
 ##(You make a directory in your project by itself)
 - Create bind mount <code>docker run -it --mount type=bind, src="$(pwd)", target=/DIR_NAME_TO_CREATE_MOUNT IMAGE_NAME bash</code>
-- Its an interactive session. You can work here or with your image from VSCode. Ctrl+D to stop interactive session
+- Its an interactive session. You can work here if you want. Ctrl+D to stop iit
 - Run your up with bind mount 
 ``` bash
 docker run -dp 8000:8000 `
