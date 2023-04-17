@@ -38,6 +38,7 @@ EXPOSE 8000
 - Update image after changes in folder      <code>docker built -t IMAGE_NAME .</code>
 - Access to your container(cat for example) <code>docker exec CONTAINER_ID cat ./SOMEFILE</code>
 - Whatch logs                               <code>docker logs CONTAINER_ID</code>
+- Rename image                              <code>docker tag IMAGE_NAME NEW_IMAGE_NAME</code>
 
 ## Work with DockerHub  
 - Login to DockerHub                    <code>docker login -u YOUR_USER_NAME</code>
@@ -45,20 +46,24 @@ EXPOSE 8000
 - Push image to DockerHub               <code>docker push YOUR_USER_NAME/IMAGE_NAME</code>
 
 ## Work with Volume
-### (Docker allocate memory for your files by itself)
+#### When you use a volume, a new directory is created within Docker’s storage directory on the host machine, and Docker manages that directory’s contents
 - Create Volume                           <code>docker volume create VOLUME_NAME</code>
 - Run your app with somefiles in a volume  
 <code>docker run -dp 8000:8000 --mount type=volume,src=VOLUME_NAME,target=/DIR_OR_FILE_TO_BE_IN_VOLUME IMAGE_NAME</code>
 - Inspect volume                          <code>docker volume inspect VOLUME_NAME</code>
 
 ## Work with Bind mounts
-### (You make a special directory in your project by itself)
+#### Bind mounts will mount a file or directory on to your container from your host machine, which you can then reference via its absolute path
 - Create bind mount <code>docker run -it --mount type=bind, src="$(pwd)", target=/DIR_NAME_TO_CREATE_MOUNT IMAGE_NAME bash</code>
 - Its an interactive session. You can work here if you want. Ctrl+D to stop it
-- Run your up with bind mount 
+- Run your app with bind mount 
 ``` bash
 docker run -dp 8000:8000 `
--w /FOLDER_NAME --mount type=bind,src="$(pwd)",target=/FOLDER_NAME `
+-w /FOLDER --mount type=bind,src="$(pwd)",target=/FOLDER `
 node:18-alpine `
 sh -c "yarn install && yarn run dev"
 ```
+-w /FOLDER_NAME - sets the “working directory” or the current directory that the command will run from
+--mount type=bind,src="$(pwd)",target=/FOLDER bind mount the current directory from the host into the /FOLDER directory in the container
+node:18-alpine - the image to use
+sh -c "yarn install && yarn run dev" - to install packages and then start the development server.
