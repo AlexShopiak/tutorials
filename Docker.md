@@ -45,7 +45,8 @@ EXPOSE 8000
 ## Work with Volume
 ###(Docker allocate memory for your files by itself)
 - Create Volume                           <code>docker volume create VOLUME_NAME</code>
-- Run your app with somefiles in a volume <code>docker run -dp 8000:8000 --mount type=volume,src=VOLUME_NAME,target=/DIR_OR_FILE_TO_BE_IN_VOLUME IMAGE_NAME</code>
+- Run your app with somefiles in a volume  
+<code>docker run -dp 8000:8000 --mount type=volume,src=VOLUME_NAME,target=/DIR_OR_FILE_TO_BE_IN_VOLUME IMAGE_NAME</code>
 - Inspect volume                          <code>docker volume inspect VOLUME_NAME</code>
 
 ## Work with Bind mounts
