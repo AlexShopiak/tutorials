@@ -21,14 +21,15 @@ CMD ["node", "server.js"]
 EXPOSE 8000
 ```
 - Build an image <code>docker build -t IMAGE_NAME .</code>  
--t to make a name for your image
+-t to tag the image as human-readable IMAGE_NAME
+. should look in current dir
 
 ## Run container
 - Run container from the image <code>docker run -dp 8000:8000 INAGE_NAME</code>  
--d to run in detached mode(background)  
--p to create a mapping between your real 8000 port and the container`s 8000 port
+-d to run the new container in “detached” mode (in the background). 
+-p to create a mapping between the host’s port 8000 to the container’s port 8000.  
 
-## Operate your container&image
+## Operate your container & image
 - Whatch all containers you run             <code>docker ps</code>
 - Stop a container                          <code>docker stop CONTAINER_ID</code>
 - Remove container                          <code>docker rm CONTAINER_ID</code>
@@ -43,14 +44,14 @@ EXPOSE 8000
 - Push image to DockerHub               <code>docker push YOUR_USER_NAME/IMAGE_NAME</code>
 
 ## Work with Volume
-###(Docker allocate memory for your files by itself)
+### (Docker allocate memory for your files by itself)
 - Create Volume                           <code>docker volume create VOLUME_NAME</code>
 - Run your app with somefiles in a volume  
 <code>docker run -dp 8000:8000 --mount type=volume,src=VOLUME_NAME,target=/DIR_OR_FILE_TO_BE_IN_VOLUME IMAGE_NAME</code>
 - Inspect volume                          <code>docker volume inspect VOLUME_NAME</code>
 
 ## Work with Bind mounts
-##(You make a special directory in your project by itself)
+### (You make a special directory in your project by itself)
 - Create bind mount <code>docker run -it --mount type=bind, src="$(pwd)", target=/DIR_NAME_TO_CREATE_MOUNT IMAGE_NAME bash</code>
 - Its an interactive session. You can work here if you want. Ctrl+D to stop it
 - Run your up with bind mount 
