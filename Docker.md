@@ -22,13 +22,13 @@ CMD ["node", "server.js"]
 EXPOSE 8000
 ```
 - Build an image <code>docker build -t IMAGE_NAME .</code>  
--t to tag the image as human-readable IMAGE_NAME
-. should look in current dir
+-t to tag the image as human-readable IMAGE_NAME  
+. should look in current dir  
 
 ## Run container
 - Run container from the image <code>docker run -dp 8000:8000 INAGE_NAME</code>  
--d to run the new container in “detached” mode (in the background). 
--p to create a mapping between the host’s port 8000 to the container’s port 8000.  
+-d to run the new container in “detached” mode (in the background)   
+-p to create a mapping between the host’s port 8000 to the container’s port 8000  
 
 ## Operate your container & image
 - Whatch all containers you run             <code>docker ps</code>
