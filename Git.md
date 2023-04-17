@@ -1,3 +1,4 @@
+IN DEVELOPMENT. NOT FOR USE!!!!!
 Список частых команд
 
 
