@@ -63,7 +63,7 @@ docker run -dp 8000:8000 `
 node:18-alpine `
 sh -c "yarn install && yarn run dev"
 ```
--w /FOLDER_NAME - sets the “working directory” or the current directory that the command will run from
---mount type=bind,src="$(pwd)",target=/FOLDER bind mount the current directory from the host into the /FOLDER directory in the container
-node:18-alpine - the image to use
-sh -c "yarn install && yarn run dev" - to install packages and then start the development server.
+-w /FOLDER_NAME - sets the “working directory” or the current directory that the command will run from  
+--mount type=bind,src="$(pwd)",target=/FOLDER - bind mount the current directory from the host into the /FOLDER directory in the container  
+node:18-alpine - the image to use  
+sh -c "yarn install && yarn run dev" - install packages and then start the development server  
