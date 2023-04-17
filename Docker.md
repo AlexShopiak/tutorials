@@ -1,15 +1,14 @@
 # How to use Docker with simple Node.js project
 1. Use PowerShell. VSCode terminal is OK  
-2. All names like <code>myfolder</code> <code>myimage</code> <code>myvolume</code> are only for example. You can use your names instead
-3. <code>CONTAINER_ID</code> is a place for your container id
+2. All words in capital are to be changed with your ones
 3. I will use 8000 port, you can use your one
 4. Read <code><a href="https://docs.docker.com/get-started/overview/">Docker Overview</a></code> for full and the most correct experience
-5. The author is not responsible for errors. Read the real documentation if you have time!
+5. The author is not responsible for errors. Read the real documentation!
 
 ## Prepare your simple project 
-- FOLDER_NAME
-- ./package.json  
-- ./server.js   
+FOLDER_NAME/  
+- ./package.json    
+- ./server.js  
 
 ## Build an image
 - Make Dokerfile file in FOLDER_NAME with:
@@ -39,9 +38,9 @@ EXPOSE 8000
 - Whatch logs                               <code>docker logs CONTAINER_ID</code>
 
 ## Work with DockerHub  
-- Login to DockerHub                          <code>docker login -u YOUR_USER_NAME</code>
-- Rename your image to have rights to push it <code>docker tag IMAGE_NAME YOUR_USER_NAME/IMAGE_NAME</code>
-- Push image to DockerHub                     <code>docker push IMAGE_NAME</code>
+- Login to DockerHub                    <code>docker login -u YOUR_USER_NAME</code>
+- Tag your image to have rights to push <code>docker tag IMAGE_NAME YOUR_USER_NAME/IMAGE_NAME</code>
+- Push image to DockerHub               <code>docker push YOUR_USER_NAME/IMAGE_NAME</code>
 
 ## Work with Volume
 ###(Docker allocate memory for your files by itself)
@@ -50,9 +49,9 @@ EXPOSE 8000
 - Inspect volume                          <code>docker volume inspect VOLUME_NAME</code>
 
 ## Work with Bind mounts
-##(You make a directory in your project by itself)
+##(You make a special directory in your project by itself)
 - Create bind mount <code>docker run -it --mount type=bind, src="$(pwd)", target=/DIR_NAME_TO_CREATE_MOUNT IMAGE_NAME bash</code>
-- Its an interactive session. You can work here if you want. Ctrl+D to stop iit
+- Its an interactive session. You can work here if you want. Ctrl+D to stop it
 - Run your up with bind mount 
 ``` bash
 docker run -dp 8000:8000 `
