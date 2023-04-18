@@ -73,13 +73,16 @@ There are two ways to put a container on a network:
 - Assign the network when starting the container
 - Connect an already running container to a network
 
-- Create the network <code>docker network create todo-app</code>
+- Create the network <code>docker network create NETWORK_NAME</code>
 - Start a MySQL container and attach it to the network
 ``` bash
 docker run -d `
-     --network todo-app --network-alias mysql `
+     --network NETWORK_NAME --network-alias mysql `
      -v todo-mysql-data:/var/lib/mysql `
      -e MYSQL_ROOT_PASSWORD=secret `
      -e MYSQL_DATABASE=todos `
      mysql:8.0
 ```
+MYSQL_ROOT_PASSWORD MYSQL_DATABASE are not my variants? they should be like here
+- connect to the database and verify that it connects <code>docker exec -it MYSQL_CONTAINER_ID mysql -u root -p</code>
+- run container in a network <code>docker run -it --network NERWORK_NAME IMAGE_NAME</code>
