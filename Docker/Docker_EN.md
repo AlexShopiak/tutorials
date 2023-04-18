@@ -32,6 +32,7 @@ EXPOSE 8000
 
 ## Operate your container & image
 - Whatch all containers you run             <code>docker ps</code>
+- Whatch all images you have                <code>docker images</code>
 - Stop a container                          <code>docker stop CONTAINER_ID</code>
 - Remove container                          <code>docker rm CONTAINER_ID</code>
 - Stop&Remove container                     <code>docker rm -f CONTAINER_ID</code>
