@@ -5,7 +5,7 @@ These are my fast tutorials for popular services
 <code>RU</code>
 <code>PL</code>
 - Git - IN DEVELOPMENT
-<code><a href="https://github.com/AlexShopiak/tutorials/blob/main/Git/Git_EN.md">EN</a></code>
+<code>EN</code>
 <code>UA</code>
 <code>RU</code>
 <code>PL</code>
