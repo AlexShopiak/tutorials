@@ -1,5 +1,5 @@
-# How to use Docker with simple Node.js project
-1. Use PowerShell. VSCode terminal is OK  
+# How to use Docker with simple Node.js project on Windows
+1. Use PowerShell. VSCode terminal is OK.      
 2. All words in capital are to be changed with your ones
 3. I will use 8000 port, you can use your one 
 4. The author is not responsible for errors
