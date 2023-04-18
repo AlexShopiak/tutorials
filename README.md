@@ -4,7 +4,7 @@ These are my fast tutorials for popular services
 <code>UA</code>
 <code>RU</code>
 <code>PL</code>
-- Git  
+- Git
 <code>EN</code>
 <code>UA</code>
 <code>RU</code>
