@@ -67,3 +67,19 @@ sh -c "yarn install && yarn run dev"
 --mount type=bind,src="$(pwd)",target=/FOLDER - bind mount the current directory from the host into the /FOLDER directory in the container  
 node:18-alpine - the image to use  
 sh -c "yarn install && yarn run dev" - install packages and then start the development server  
+
+## Container networking
+There are two ways to put a container on a network:
+- Assign the network when starting the container
+- Connect an already running container to a network
+
+- Create the network <code>docker network create todo-app</code>
+- Start a MySQL container and attach it to the network
+``` bash
+docker run -d `
+     --network todo-app --network-alias mysql `
+     -v todo-mysql-data:/var/lib/mysql `
+     -e MYSQL_ROOT_PASSWORD=secret `
+     -e MYSQL_DATABASE=todos `
+     mysql:8.0
+```
