@@ -40,6 +40,7 @@ EXPOSE 8000
 - Access to your container(cat for example) <code>docker exec CONTAINER_ID cat ./SOMEFILE</code>
 - Whatch logs                               <code>docker logs CONTAINER_ID</code>
 - Rename image                              <code>docker tag IMAGE_NAME NEW_IMAGE_NAME</code>
+- Remove everything                         <code>docker system prune</code>
 
 ## Work with DockerHub  
 - Login to DockerHub                    <code>docker login -u YOUR_USER_NAME</code>
